@@ -125,3 +125,5 @@ dmypy.json
 
 # Miscellaneous
 .vscode
+sandbox.py
+*.dat
