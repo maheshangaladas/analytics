@@ -1,9 +1,10 @@
 """
-google tag manager functions
-----------------------------
+google.google_tag_manager
+.........................
+
+functions for google tag manager API.
 
 ref. https://developers.google.com/tag-manager/api/v2/devguide
-ref. http://googleapis.github.io/google-api-python-client/docs/dyn/tagmanager_v2.accounts.user_permissions.html#list
 """
 
 
