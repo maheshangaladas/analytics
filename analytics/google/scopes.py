@@ -10,7 +10,11 @@ GOOGLE_TAG_MANAGER_SCOPES = [
 
 GOOGLE_ANALYTICS_SCOPES = [
     "https://www.googleapis.com/auth/analytics",
-    "https://www.googleapis.com/auth/analytics.manage.users.readonly"
+    "https://www.googleapis.com/auth/analytics.manage.users.readonly",
+    "https://www.googleapis.com/auth/analytics.edit",
+    "https://www.googleapis.com/auth/analytics.manage.users",
+    "https://www.googleapis.com/auth/analytics.provision",
+    "https://www.googleapis.com/auth/analytics.readonly"
 ]
 
 SEARCH_CONSOLE_SCOPES = ["https://www.googleapis.com/auth/webmasters"]

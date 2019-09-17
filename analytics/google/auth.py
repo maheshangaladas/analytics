@@ -1,3 +1,10 @@
+"""
+google.auth
+...........
+
+authorization logic for google APIs.
+"""
+
 from googleapiclient.discovery import build
 import httplib2
 from oauth2client import client
@@ -13,7 +20,7 @@ def get_service(api_name, api_version, record, method="service_account"):
 
     ref. https://developers.google.com/apis-explorer/#p/ (services)
     ref. https://developers.google.com/analytics/devguides/config/mgmt/v3/quickstart/service-py (service account authorization)
-    ref. https://developers.google.com/identity/protocols/googlescopes#analyticsv3 (API scopes)
+    ref. https://developers.google.com/identity/protocols/googlescopes (API scopes)
     ref. https://developers.google.com/tag-manager/api/v1/devguide (client authorization)
 
     Note! On Google Cloud Platform, a service account is linked to an email. 
