@@ -26,6 +26,8 @@ def get_service(api_name, api_version, record, method="service_account"):
     Note! On Google Cloud Platform, a service account is linked to an email. 
     For service account authorization to work, you must give permissions to your service account email in your various applications.
     
+    Note! If you want to log in with a different account, then remove the .dat token file from your machine. 
+    
     :param api_name: name of the api
     :type api_name: str
     :param api_version: version of the api
@@ -40,6 +42,8 @@ def get_service(api_name, api_version, record, method="service_account"):
     if api_name == "tagmanager":
         scopes = GOOGLE_TAG_MANAGER_SCOPES
     elif api_name == "analytics":
+        scopes = GOOGLE_ANALYTICS_SCOPES
+    elif api_name == "analyticsreporting":
         scopes = GOOGLE_ANALYTICS_SCOPES
     elif api_name == "searchconsole":
         scopes = SEARCH_CONSOLE_SCOPES

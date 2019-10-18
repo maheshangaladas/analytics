@@ -124,6 +124,6 @@ dmypy.json
 .pyre/
 
 # Miscellaneous
-.vscode
+.vscode/
 sandbox.py
 *.dat
