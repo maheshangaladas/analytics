@@ -127,3 +127,10 @@ dmypy.json
 .vscode/
 sandbox.py
 *.dat
+google_analytics.py 
+google_search_console.py 
+pagespeed.py 
+.github_changelog_generator
+mypy.ini 
+typecheck.sh
+build.sh
