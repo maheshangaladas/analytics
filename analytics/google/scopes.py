@@ -1,3 +1,10 @@
+"""
+google.scopes
+.............
+
+google API scopes
+"""
+
 GOOGLE_TAG_MANAGER_SCOPES = [
     "https://www.googleapis.com/auth/tagmanager.edit.containers",
     "https://www.googleapis.com/auth/tagmanager.readonly",
