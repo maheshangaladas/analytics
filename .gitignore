@@ -134,3 +134,4 @@ pagespeed.py
 mypy.ini 
 typecheck.sh
 build.sh
+gcp-client.json
