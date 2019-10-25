@@ -9,8 +9,8 @@ from analytics.authorization import get_service
 import googleapiclient
 
 
-#gcp_client = "tests/encrypted/gcp-client.json"
-gcp_client = "tests/encrypted/gcp-client.json.enc"
+# gcp_client = "/Users/wnguessan/gcp-client.json"
+gcp_client = "gcp-client.json.enc"
 gtmservice = get_service("tagmanager", "v2", gcp_client)
 
 
