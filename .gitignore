@@ -136,3 +136,4 @@ typecheck.sh
 build.sh
 gcp-client.json
 encrypted/
+.DS_Store

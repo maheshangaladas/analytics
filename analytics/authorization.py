@@ -3,6 +3,11 @@ google.auth
 ...........
 
 authorization logic for google APIs.
+
+ref. https://developers.google.com/apis-explorer/#p/ (services)
+ref. https://developers.google.com/analytics/devguides/config/mgmt/v3/quickstart/service-py (service account authorization)
+ref. https://developers.google.com/identity/protocols/googlescopes (API scopes)
+ref. https://developers.google.com/tag-manager/api/v1/devguide (client authorization)
 """
 
 from googleapiclient.discovery import build
@@ -15,31 +20,12 @@ from analytics.scopes import *
 
 
 def get_service(api_name, api_version, gcp_file, method="client_secret"):
-    """Obtain service to use to interact with Google API. This solution is cobbled together from a variety of sources.
-    Google has deprecated parts of its libraries but hasn't updated its documentation.
-
-    ref. https://developers.google.com/apis-explorer/#p/ (services)
-    ref. https://developers.google.com/analytics/devguides/config/mgmt/v3/quickstart/service-py (service account authorization)
-    ref. https://developers.google.com/identity/protocols/googlescopes (API scopes)
-    ref. https://developers.google.com/tag-manager/api/v1/devguide (client authorization)
-
-    Note! On Google Cloud Platform, a service account is linked to an email. 
-    For service account authorization to work, you must give permissions to your service account email in your various applications.
-    
-    Note! If you want to log in with a different account, then remove the .dat token file from your machine. 
-    to authenticate as new user just delete the tokens that are saved on your computer
-    #! what happens if you move the token?? what happens if you want to save it somewhere else? how does the library finds it?
-    #! if you change the file location get_service won't find it (so you need to keep it where it's at)
-    :param api_name: name of the api
-    :type api_name: str
-    :param api_version: version of the api
-    :type api_version: str
-    :param filepath: service account or client secret JSON file(s)
-    :type filepath: str
-    :param method: type of authentication (service_account or client_secret), defaults to "service_account"
-    :type method: str, optional
-    :return: service object
-    :rtype: googleapiclient.discovery.Resource
+    """
+    obtain service object to access google's apis:
+    - for service account authorization, remember to give permissions to your service account email in you apps
+    - to login with a different account, just delete the token and re-run the flow
+    - the token gets saved in your current project's root directory, if you move it, the authorization won't work
+    (this function needs some improvements to handle token storage and retrieval yet)
     """
     if api_name == "tagmanager":
         scopes = GOOGLE_TAG_MANAGER_SCOPES
@@ -55,7 +41,7 @@ def get_service(api_name, api_version, gcp_file, method="client_secret"):
         service = build(api_name, api_version, credentials=credentials)
     elif method == "client_secret":
         flow = client.flow_from_clientsecrets(gcp_file, scopes)
-        storage = file.Storage(api_name + "_token.dat")  #! change here to set where the token should be saved (and logic to retrive it)
+        storage = file.Storage(api_name + "_token.dat")
         credentials = storage.get()
         if credentials is None or credentials.invalid:
             credentials = tools.run_flow(flow, storage)
