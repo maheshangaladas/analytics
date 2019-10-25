@@ -12,14 +12,14 @@
 
 <img src="https://static.thenounproject.com/png/511316-200.png" alt="signal" align="right" height="260px">
 
-**analytics** helps you work with common web analytics services via API.
+**analytics** helps you work with popular web analytics services via API.
 
 It currently supports:
 
 - Google Tag Manager
 
-Currently, the library doesn't provide access to every functionality for the respective services. It focuses on the most common ones. The main reason for developing this library is that some of the earlier solutions on GitHub have not been updated in years.
+At the moment, the library doesn't provide access to every functionality for the respective services. It focuses on the most common ones. The reason for developing this library is that many earlier solutions on GitHub for tools like Google Analytics, Google Tag Manager, and more have not been updated in years. Some are not maintained anymore, or simply don't work.
 
-**analytics** can help you monitor, inspect, and automate some of your web analytics work.
+**analytics** can help you monitor, inspect, and automate some of your web analytics and SEO work..
 
 ### More [[Details](https://github.com/xslates/cutter/blob/master/DETAILS.md)]

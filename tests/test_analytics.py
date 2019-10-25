@@ -5,6 +5,8 @@ tests.test_gtm
 testing google tag manager api functions
 """
 
+import os
+
 import googleapiclient
 import pandas as pd
 
@@ -22,7 +24,8 @@ from analytics.google_tag_manager import (
 
 
 def test_google_tag_manager():
-    # gcp_client = "/Users/wnguessan/gcp-client.json"
+    # gcp_client = os.environ["gcp_client_path"] # for local testing
+
     gcp_client = "gcp-client.json.enc"
 
     gtm_service = get_service("tagmanager", "v2", gcp_client)
@@ -54,7 +57,3 @@ def test_google_tag_manager():
 
     triggers = gtm_list_triggers(gtm_service, workspace)
     assert isinstance(triggers, pd.DataFrame)
-
-
-if __name__ == "__main__":
-    test_google_tag_manager()
