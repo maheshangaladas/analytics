@@ -16,6 +16,6 @@ setup(
     license="GNU GPLv3",
     keywords="analytics google",
     url="https://github.com/xslates/analytics",
-    long_description=read("README"),
+    long_description=read("README.md"),
     install_requires=[line.rstrip("\n") for line in open("requirements.txt")],
 )

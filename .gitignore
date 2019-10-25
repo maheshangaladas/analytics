@@ -126,7 +126,7 @@ dmypy.json
 # Miscellaneous
 .vscode/
 sandbox.py
-*.dat
+tagmanager_token.dat
 google_analytics.py 
 google_search_console.py 
 pagespeed.py 
@@ -134,3 +134,5 @@ pagespeed.py
 mypy.ini 
 typecheck.sh
 build.sh
+gcp-client.json
+encrypted/

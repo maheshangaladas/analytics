@@ -11,7 +11,7 @@ from oauth2client import client
 from oauth2client import file
 from oauth2client import tools
 from oauth2client.service_account import ServiceAccountCredentials
-from analytics.google.scopes import *
+from analytics.scopes import *
 
 
 def get_service(api_name, api_version, gcp_file, method="client_secret"):

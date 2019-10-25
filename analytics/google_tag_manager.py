@@ -9,7 +9,7 @@ ref. https://developers.google.com/tag-manager/api/v2/devguide
 
 from pandas.io.json import json_normalize
 import pandas as pd
-from analytics.google.utils import clean_names
+from analytics.utils import clean_names
 
 
 def gtm_list_accounts(service) -> pd.DataFrame:
