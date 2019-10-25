@@ -7,8 +7,9 @@ functions to query the google tag manager API
 ref. https://developers.google.com/tag-manager/api/v2/devguide
 """
 
-from pandas.io.json import json_normalize
 import pandas as pd
+from pandas.io.json import json_normalize
+
 from analytics.utils import clean_names
 
 
