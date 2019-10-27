@@ -22,4 +22,4 @@ At the moment, the library doesn't provide access to every functionality for the
 
 **analytics** can help you monitor, inspect, and automate some of your web analytics and SEO work..
 
-### More [[Details](https://github.com/xslates/cutter/blob/master/DETAILS.md)]
+### More [[Details](https://github.com/xslates/analytics/blob/master/DETAILS.md)]
