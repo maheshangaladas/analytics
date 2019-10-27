@@ -25,9 +25,9 @@ from analytics.google_tag_manager import (
 
 def test_google_tag_manager():
     # gcp_client = os.environ["gcp_client_path"]  # for local testing
-    # gcp_client = "gcp-client.json"
+    gcp_client = "gcp-client.json"
 
-    gcp_client = "gcp-client.json.enc"
+    # gcp_client = "gcp-client.json.enc"
 
     gtm_service = get_service("tagmanager", "v2", gcp_client)
     assert isinstance(gtm_service, googleapiclient.discovery.Resource)
