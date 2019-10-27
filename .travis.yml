@@ -1,18 +1,43 @@
+# language: python
+# python: 
+#   - "3.7-dev"
+# before_install:
+#   - openssl aes-256-cbc -K $encrypted_3fb15ced9c51_key -iv $encrypted_3fb15ced9c51_iv -in tagmanager_token.dat.enc -out tagmanager_token.dat -d
+#   - openssl aes-256-cbc -K $encrypted_662a9add1c4f_key -iv $encrypted_662a9add1c4f_iv -in gcp-client.json.enc -out gcp-client.json -d
+#   #- pip install pytest
+#   - pip install codecov
+#   - pip install pytest-cov
+#   #- pip install coveralls
+# install: 
+#   - pip install -r requirements.txt
+# script:
+#   #- pytest
+#   - pytest -s --cov=analytics tests/
+# after_success:
+#   - codecov
+#   #- coveralls 
+
+
+
 language: python
-python: 
+python:
   - "3.7-dev"
+
 before_install:
   - openssl aes-256-cbc -K $encrypted_3fb15ced9c51_key -iv $encrypted_3fb15ced9c51_iv -in tagmanager_token.dat.enc -out tagmanager_token.dat -d
   - openssl aes-256-cbc -K $encrypted_662a9add1c4f_key -iv $encrypted_662a9add1c4f_iv -in gcp-client.json.enc -out gcp-client.json -d
-  #- pip install pytest
-  - pip install codecov
+  - pip install coveralls
   - pip install pytest-cov
-  #- pip install coveralls
-install: 
+  - pip install pytest
+
+# dependencies
+install:
   - pip install -r requirements.txt
+
+# run tests
 script:
-  #- pytest
-  - pytest -s --cov=analytics tests/
+  - pytest --cov=analytics/
+
+# run coverage
 after_success:
-  - codecov
-  #- coveralls 
+- coveralls
