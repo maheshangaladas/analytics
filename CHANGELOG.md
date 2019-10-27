@@ -1,8 +1,21 @@
 # Change Log
 
-## [v0.0.1](https://github.com/xslates/analytics/tree/v0.0.1) (2019-10-25)
+## [v0.0.1](https://github.com/xslates/analytics/tree/v0.0.1) (2019-10-27)
+[Full Changelog](https://github.com/xslates/analytics/compare/0.0.1...v0.0.1)
+
+**Fixed bugs:**
+
+- code coverage [\#13](https://github.com/xslates/analytics/issues/13)
+
 **Merged pull requests:**
 
+- updated link to DETAILS in README [\#11](https://github.com/xslates/analytics/pull/11) ([xslates](https://github.com/xslates))
+- updated DETAILS [\#10](https://github.com/xslates/analytics/pull/10) ([xslates](https://github.com/xslates))
+
+## [0.0.1](https://github.com/xslates/analytics/tree/0.0.1) (2019-10-25)
+**Merged pull requests:**
+
+- release 0.0.1 [\#9](https://github.com/xslates/analytics/pull/9) ([xslates](https://github.com/xslates))
 - clean .gitignore, updated tests [\#8](https://github.com/xslates/analytics/pull/8) ([xslates](https://github.com/xslates))
 - Analytics dev [\#7](https://github.com/xslates/analytics/pull/7) ([xslates](https://github.com/xslates))
 - Create LICENSE [\#6](https://github.com/xslates/analytics/pull/6) ([xslates](https://github.com/xslates))

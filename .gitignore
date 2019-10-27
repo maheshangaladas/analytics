@@ -136,3 +136,4 @@ build.sh
 gcp-client.json
 encrypted/
 .DS_Store
+auth.tar
