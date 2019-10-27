@@ -6,7 +6,7 @@ python:
 
 before_install:
   - openssl aes-256-cbc -K $encrypted_3fb15ced9c51_key -iv $encrypted_3fb15ced9c51_iv -in auth.tar.enc -out auth.tar -d
-  - tar xvf secrets.tar
+  - tar xvf auth.tar
   - pip install coveralls
   - pip install pytest
   - pip install pytest-cov
