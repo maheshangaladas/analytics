@@ -4,10 +4,12 @@ before_install:
   - openssl aes-256-cbc -K $encrypted_3fb15ced9c51_key -iv $encrypted_3fb15ced9c51_iv -in tagmanager_token.dat.enc -out tagmanager_token.dat -d
   - openssl aes-256-cbc -K $encrypted_662a9add1c4f_key -iv $encrypted_662a9add1c4f_iv -in gcp-client.json.enc -out gcp-client.json -d
   - pip install pytest
-  - pip install pytest-cov
+  - pip install codecov
+  #- pip install pytest-cov
 install: 
   - pip install -r requirements.txt
 script:
-  - pytest --cov=analytics tests/
+  #- pytest
+  - pytest --cov=analytics/
 after_success:
-  - coveralls 
+  - codecov 
