@@ -24,7 +24,7 @@ from analytics.google_tag_manager import (
 
 
 def test_google_tag_manager():
-    # gcp_client = os.environ["gcp_client_path"] # for local testing
+    # gcp_client = os.environ["gcp_client_path"]  # for local testing
 
     gcp_client = "gcp-client.json.enc"
 

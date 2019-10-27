@@ -13,5 +13,5 @@ install:
 script:
   - pytest
   #- pytest --cov=analytics tests/
-after_success:
-  - coveralls 
+#after_success:
+#  - coveralls 
