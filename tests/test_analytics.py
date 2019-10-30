@@ -47,13 +47,14 @@ def test_auth():
     assert isinstance(ga_service, googleapiclient.discovery.Resource)
 
 
-# def test_google_tag_manager():
+def test_google_tag_manager():
 
-#     gtm_service = get_service("tagmanager", "v2", gcp_client)
-#     assert isinstance(gtm_service, googleapiclient.discovery.Resource)
+    gtm_service = get_service("tagmanager", "v2", gcp_client)
+    assert isinstance(gtm_service, googleapiclient.discovery.Resource)
 
-#     accounts = gtm_list_accounts(gtm_service)
-#     assert isinstance(accounts, pd.DataFrame)
+    accounts = gtm_list_accounts(gtm_service)
+    assert isinstance(accounts, pd.DataFrame)
+
 
 #     account = accounts.iloc[0, 0]
 #     permissions = gtm_list_permissions(gtm_service, account)
@@ -80,13 +81,14 @@ def test_auth():
 #     assert isinstance(triggers, pd.DataFrame)
 
 
-# def test_google_analytics():
+def test_google_analytics():
 
-#     ga_service = get_service("analytics", "v3", gcp_client)
-#     # ga_reporting = get_service("analyticsreporting", "v4", gcp_client)
+    ga_service = get_service("analytics", "v3", gcp_client)
+    # ga_reporting = get_service("analyticsreporting", "v4", gcp_client)
 
-#     summaries = ga_list_account_summaries(ga_service)
-#     assert isinstance(summaries, pd.DataFrame)
+    summaries = ga_list_account_summaries(ga_service)
+    assert isinstance(summaries, pd.DataFrame)
+
 
 #     accounts = ga_list_accounts(ga_service)
 #     account = accounts.iloc[0, 0]
