@@ -9,7 +9,7 @@ def read(fname):
 
 setup(
     name="analytics",
-    version="0.0.1",
+    version="0.0.2",
     author="Wilfried N'Guessan",
     author_email="wilfried.nguessan@outlook.com",
     description="Web analytics tooling",
