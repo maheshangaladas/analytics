@@ -11,6 +11,20 @@ import googleapiclient
 import pandas as pd
 
 from analytics.authorization import get_service
+from analytics.google_analytics import (
+    ga_adwords_links,
+    ga_list_account_summaries,
+    ga_list_account_users,
+    ga_list_accounts,
+    ga_list_custom_dimensions,
+    ga_list_custom_metrics,
+    ga_list_filters,
+    ga_list_goals,
+    ga_list_remarketing_audiences,
+    ga_list_segments,
+    ga_list_views,
+    ga_list_webproperties,
+)
 from analytics.google_tag_manager import (
     gtm_list_accounts,
     gtm_list_containers,
@@ -55,3 +69,49 @@ def test_google_tag_manager():
 
     triggers = gtm_list_triggers(gtm_service, workspace)
     assert isinstance(triggers, pd.DataFrame)
+
+
+def test_google_analytics():
+    gcp_client = "gcp-client.json"
+
+    ga_service = get_service("analytics", "v3", gcp_client)
+    ga_reporting = get_service("analyticsreporting", "v4", gcp_client)
+
+    summaries = ga_list_account_summaries(ga_service)
+    assert isinstance(summaries, pd.DataFrame)
+
+    accounts = ga_list_accounts(ga_service)
+    account = accounts.iloc[0, 0]
+    assert isinstance(accounts, pd.DataFrame)
+
+    properties = ga_list_webproperties(ga_service, account)
+    webprop = properties.iloc[0, 0]
+    assert isinstance(properties, pd.DataFrame)
+
+    users = ga_list_account_users(ga_service, account)
+    assert isinstance(users, pd.DataFrame)
+
+    adwords_links = ga_adwords_links(ga_service, account, webprop)
+    assert isinstance(adwords_links, pd.DataFrame)
+
+    custom_dimensions = ga_list_custom_dimensions(ga_service, account, webprop)
+    assert isinstance(custom_dimensions, pd.DataFrame)
+
+    custom_metrics = ga_list_custom_metrics(ga_service, account, webprop)
+    assert isinstance(custom_metrics, pd.DataFrame)
+
+    filters = ga_list_filters(ga_service, account)
+    assert isinstance(filters, pd.DataFrame)
+
+    views = ga_list_views(ga_service, account, webprop)
+    view = views.iloc[0, 0]
+    assert isinstance(views, pd.DataFrame)
+
+    goals = ga_list_goals(ga_service, account, webprop, view)
+    assert isinstance(goals, pd.DataFrame)
+
+    audiences = ga_list_remarketing_audiences(ga_service, account, webprop)
+    assert isinstance(audiences, pd.DataFrame)
+
+    segments = ga_list_segments(ga_service)
+    assert isinstance(segments, pd.DataFrame)

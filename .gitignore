@@ -137,3 +137,5 @@ gcp-client.json
 encrypted/
 .DS_Store
 auth.tar
+analytics_token.dat
+analyticsreporting_token.dat
