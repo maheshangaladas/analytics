@@ -37,8 +37,10 @@ from analytics.google_tag_manager import (
 )
 
 
+gcp_client = "gcp-client.json"
+
+
 def test_google_tag_manager():
-    gcp_client = "gcp-client.json"
 
     gtm_service = get_service("tagmanager", "v2", gcp_client)
     assert isinstance(gtm_service, googleapiclient.discovery.Resource)
@@ -72,7 +74,6 @@ def test_google_tag_manager():
 
 
 def test_google_analytics():
-    gcp_client = "gcp-client.json"
 
     ga_service = get_service("analytics", "v3", gcp_client)
     ga_reporting = get_service("analyticsreporting", "v4", gcp_client)
