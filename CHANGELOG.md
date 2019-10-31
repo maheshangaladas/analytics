@@ -1,7 +1,14 @@
 # Change Log
 
-## [v0.0.2](https://github.com/xslates/analytics/tree/v0.0.2) (2019-10-30)
-[Full Changelog](https://github.com/xslates/analytics/compare/0.0.1...v0.0.2)
+## [v0.0.3](https://github.com/xslates/analytics/tree/v0.0.3) (2019-10-31)
+[Full Changelog](https://github.com/xslates/analytics/compare/0.0.2...v0.0.3)
+
+**Merged pull requests:**
+
+- added analytics management [\#18](https://github.com/xslates/analytics/pull/18) ([xslates](https://github.com/xslates))
+
+## [0.0.2](https://github.com/xslates/analytics/tree/0.0.2) (2019-10-30)
+[Full Changelog](https://github.com/xslates/analytics/compare/0.0.1...0.0.2)
 
 **Fixed bugs:**
 
@@ -9,6 +16,7 @@
 
 **Merged pull requests:**
 
+- added google analytics management API [\#17](https://github.com/xslates/analytics/pull/17) ([xslates](https://github.com/xslates))
 - code coverage badge [\#16](https://github.com/xslates/analytics/pull/16) ([xslates](https://github.com/xslates))
 - Analytics dev [\#15](https://github.com/xslates/analytics/pull/15) ([xslates](https://github.com/xslates))
 - updated link to DETAILS in README [\#11](https://github.com/xslates/analytics/pull/11) ([xslates](https://github.com/xslates))
