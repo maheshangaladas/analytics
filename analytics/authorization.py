@@ -1,5 +1,5 @@
 """
-google.auth
+analytics.auth
 ...........
 
 authorization logic for google APIs.
@@ -10,12 +10,11 @@ ref. https://developers.google.com/identity/protocols/googlescopes (API scopes)
 ref. https://developers.google.com/tag-manager/api/v1/devguide (client authorization)
 """
 
-from googleapiclient.discovery import build
 import httplib2
-from oauth2client import client
-from oauth2client import file
-from oauth2client import tools
+from googleapiclient.discovery import build
+from oauth2client import client, file, tools
 from oauth2client.service_account import ServiceAccountCredentials
+
 from analytics.scopes import *
 
 
@@ -37,7 +36,9 @@ def get_service(api_name, api_version, gcp_file, method="client_secret"):
         scopes = SEARCH_CONSOLE_SCOPES
 
     if method == "service_account":
-        credentials = ServiceAccountCredentials.from_json_keyfile_name(gcp_file, scopes)
+        credentials = ServiceAccountCredentials.from_json_keyfile_name(
+            gcp_file, scopes
+        )
         service = build(api_name, api_version, credentials=credentials)
     elif method == "client_secret":
         flow = client.flow_from_clientsecrets(gcp_file, scopes)
@@ -49,4 +50,3 @@ def get_service(api_name, api_version, gcp_file, method="client_secret"):
         service = build(api_name, api_version, http)
 
     return service
-

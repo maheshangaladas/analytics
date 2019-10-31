@@ -1,10 +1,22 @@
 # Change Log
 
 ## [v0.0.3](https://github.com/xslates/analytics/tree/v0.0.3) (2019-10-31)
-[Full Changelog](https://github.com/xslates/analytics/compare/0.0.2...v0.0.3)
+[Full Changelog](https://github.com/xslates/analytics/compare/0.0.3...v0.0.3)
+
+**Implemented enhancements:**
+
+- Exploding Pandas columns [\#19](https://github.com/xslates/analytics/issues/19)
 
 **Merged pull requests:**
 
+- updated release in setup.py [\#22](https://github.com/xslates/analytics/pull/22) ([xslates](https://github.com/xslates))
+
+## [0.0.3](https://github.com/xslates/analytics/tree/0.0.3) (2019-10-31)
+[Full Changelog](https://github.com/xslates/analytics/compare/0.0.2...0.0.3)
+
+**Merged pull requests:**
+
+- decorators to streamline flatting of JSON responses [\#20](https://github.com/xslates/analytics/pull/20) ([xslates](https://github.com/xslates))
 - added analytics management [\#18](https://github.com/xslates/analytics/pull/18) ([xslates](https://github.com/xslates))
 
 ## [0.0.2](https://github.com/xslates/analytics/tree/0.0.2) (2019-10-30)
