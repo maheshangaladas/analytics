@@ -1,5 +1,5 @@
 """
-google.scopes
+analytics.scopes
 .............
 
 google API scopes
@@ -21,7 +21,7 @@ GOOGLE_ANALYTICS_SCOPES = [
     "https://www.googleapis.com/auth/analytics.edit",
     "https://www.googleapis.com/auth/analytics.manage.users",
     "https://www.googleapis.com/auth/analytics.provision",
-    "https://www.googleapis.com/auth/analytics.readonly"
+    "https://www.googleapis.com/auth/analytics.readonly",
 ]
 
 SEARCH_CONSOLE_SCOPES = ["https://www.googleapis.com/auth/webmasters"]

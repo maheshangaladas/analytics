@@ -1,5 +1,5 @@
 """
-google.google_tag_manager
+analytics.google_tag_manager
 .........................
 
 functions to query the google tag manager API

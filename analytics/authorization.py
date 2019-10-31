@@ -1,5 +1,5 @@
 """
-google.auth
+analytics.auth
 ...........
 
 authorization logic for google APIs.
@@ -37,7 +37,9 @@ def get_service(api_name, api_version, gcp_file, method="client_secret"):
         scopes = SEARCH_CONSOLE_SCOPES
 
     if method == "service_account":
-        credentials = ServiceAccountCredentials.from_json_keyfile_name(gcp_file, scopes)
+        credentials = ServiceAccountCredentials.from_json_keyfile_name(
+            gcp_file, scopes
+        )
         service = build(api_name, api_version, credentials=credentials)
     elif method == "client_secret":
         flow = client.flow_from_clientsecrets(gcp_file, scopes)
