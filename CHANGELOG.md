@@ -1,14 +1,16 @@
 # Change Log
 
-## [v0.0.3](https://github.com/xslates/analytics/tree/v0.0.3) (2019-10-31)
-[Full Changelog](https://github.com/xslates/analytics/compare/0.0.3...v0.0.3)
+## [v0.1.0](https://github.com/xslates/analytics/tree/v0.1.0) (2019-11-02)
+[Full Changelog](https://github.com/xslates/analytics/compare/0.0.3...v0.1.0)
 
 **Implemented enhancements:**
 
+- Melt data frames [\#21](https://github.com/xslates/analytics/issues/21)
 - Exploding Pandas columns [\#19](https://github.com/xslates/analytics/issues/19)
 
 **Merged pull requests:**
 
+- Analytics dev [\#23](https://github.com/xslates/analytics/pull/23) ([xslates](https://github.com/xslates))
 - updated release in setup.py [\#22](https://github.com/xslates/analytics/pull/22) ([xslates](https://github.com/xslates))
 
 ## [0.0.3](https://github.com/xslates/analytics/tree/0.0.3) (2019-10-31)
