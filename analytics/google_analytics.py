@@ -13,141 +13,109 @@ ref. https://code.markedmondson.me/anti-sampling-google-analytics-api/
 ref. https://developers.google.com/analytics/devguides/config/mgmt/v3/unsampled-reports
 """
 
-import pandas as pd
-
-from analytics.utils import flatten
-
-
-@flatten
-def ga_list_account_summaries(service) -> pd.DataFrame:
-    account_summaries = (
-        service.management().accountSummaries().list().execute()["items"]
-    )
-    return account_summaries
+from dataclasses import dataclass
+from typing import Dict
 
 
-@flatten
-def ga_list_accounts(service) -> pd.DataFrame:
-    accounts = service.management().accounts().list().execute()["items"]
-    return accounts
+@dataclass
+class GAUser(object):
+    service: object
 
-
-@flatten
-def ga_list_webproperties(service, account_id: str) -> pd.DataFrame:
-    properties = (
-        service.management()
-        .webproperties()
-        .list(accountId=account_id)
-        .execute()["items"]
-    )
-    return properties
-
-
-@flatten
-def ga_list_account_users(service, account_path: str) -> pd.DataFrame:
-    account_users = (
-        service.management()
-        .accountUserLinks()
-        .list(accountId=account_path)
-        .execute()["items"]
-    )
-    return account_users
-
-
-@flatten
-def ga_adwords_links(
-    service, account_id: str, webproperty_id: str
-) -> pd.DataFrame:
-    adwords_links = (
-        service.management()
-        .webPropertyAdWordsLinks()
-        .list(accountId=account_id, webPropertyId=webproperty_id)
-        .execute()["items"]
-    )
-    return adwords_links
-
-
-@flatten
-def ga_list_custom_dimensions(
-    service, account_id: str, webproperty_id: str
-) -> pd.DataFrame:
-    custom_dimensions = (
-        service.management()
-        .customDimensions()
-        .list(accountId=account_id, webPropertyId=webproperty_id)
-        .execute()["items"]
-    )
-    return custom_dimensions
-
-
-@flatten
-def ga_list_custom_metrics(
-    service, account_id: str, webproperty_id: str
-) -> pd.DataFrame:
-    custom_metrics = (
-        service.management()
-        .customMetrics()
-        .list(accountId=account_id, webPropertyId=webproperty_id)
-        .execute()["items"]
-    )
-    return custom_metrics
-
-
-@flatten
-def ga_list_filters(service, account_id: str) -> pd.DataFrame:
-    filters = (
-        service.management()
-        .filters()
-        .list(accountId=account_id)
-        .execute()["items"]
-    )
-    return filters
-
-
-@flatten
-def ga_list_views(
-    service, account_id: str, webproperty_id: str
-) -> pd.DataFrame:
-    views = (
-        service.management()
-        .profiles()
-        .list(accountId=account_id, webPropertyId=webproperty_id)
-        .execute()["items"]
-    )
-    return views
-
-
-@flatten
-def ga_list_goals(
-    service, account_id: str, webproperty_id: str, view_id: str
-) -> pd.DataFrame:
-    goals = (
-        service.management()
-        .goals()
-        .list(
-            accountId=account_id,
-            webPropertyId=webproperty_id,
-            profileId=view_id,
+    def summaries(self) -> Dict:
+        summaries = (
+            self.service.management().accountSummaries().list().execute()
         )
-        .execute()["items"]
-    )
-    return goals
+        return summaries
 
+    def accounts(self) -> Dict:
+        accounts = self.service.management().accounts().list().execute()
+        return accounts
 
-@flatten
-def ga_list_remarketing_audiences(
-    service, account_id: str, webproperty_id: str
-) -> pd.DataFrame:
-    remarketing_audiences = (
-        service.management()
-        .remarketingAudience()
-        .list(accountId=account_id, webPropertyId=webproperty_id)
-        .execute()["items"]
-    )
-    return remarketing_audiences
+    def properties(self, account_id: str) -> Dict:
+        properties = (
+            self.service.management()
+            .webproperties()
+            .list(accountId=account_id)
+            .execute()
+        )
+        return properties
 
+    def users(self, account_id: str) -> Dict:
+        users = (
+            self.service.management()
+            .accountUserLinks()
+            .list(accountId=account_id)
+            .execute()
+        )
+        return users
 
-@flatten
-def ga_list_segments(service) -> pd.DataFrame:
-    segments = service.management().segments().list().execute()["items"]
-    return segments
+    def adwords_links(self, account_id: str, property_id: str) -> Dict:
+        adwords_links = (
+            self.service.management()
+            .webPropertyAdWordsLinks()
+            .list(accountId=account_id, webPropertyId=property_id)
+            .execute()
+        )
+        return adwords_links
+
+    def custom_dimensions(self, account_id: str, property_id: str) -> Dict:
+        custom_dimensions = (
+            self.service.management()
+            .customDimensions()
+            .list(accountId=account_id, webPropertyId=property_id)
+            .execute()
+        )
+        return custom_dimensions
+
+    def custom_metrics(self, account_id: str, property_id: str) -> Dict:
+        custom_metrics = (
+            self.service.management()
+            .customMetrics()
+            .list(accountId=account_id, webPropertyId=property_id)
+            .execute()
+        )
+        return custom_metrics
+
+    def filters(self, account_id: str) -> Dict:
+        filters = (
+            self.service.management()
+            .filters()
+            .list(accountId=account_id)
+            .execute()
+        )
+        return filters
+
+    def views(self, account_id: str, property_id: str) -> Dict:
+        views = (
+            self.service.management()
+            .profiles()
+            .list(accountId=account_id, webPropertyId=property_id)
+            .execute()
+        )
+        return views
+
+    def goals(self, account_id: str, property_id: str, view_id: str) -> Dict:
+        goals = (
+            self.service.management()
+            .goals()
+            .list(
+                accountId=account_id,
+                webPropertyId=property_id,
+                profileId=view_id,
+            )
+            .execute()
+        )
+        return goals
+
+    def remarketing(self, account_id: str, property_id: str) -> Dict:
+        remarketing_audiences = (
+            self.service.management()
+            .remarketingAudience()
+            .list(accountId=account_id, webPropertyId=property_id)
+            .execute()
+        )
+        return remarketing_audiences
+
+    def segments(self) -> Dict:
+        segments = self.service.management().segments().list().execute()
+        return segments

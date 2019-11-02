@@ -1,124 +1,99 @@
 """
-tests.test_gtm
+tests
 ..............
 
-testing google tag manager api functions
+testing analytics functions
 """
-
-import os
 
 import googleapiclient
 import pandas as pd
 
-from analytics.authorization import get_service
-from analytics.google_analytics import (
-    ga_adwords_links,
-    ga_list_account_summaries,
-    ga_list_account_users,
-    ga_list_accounts,
-    ga_list_custom_dimensions,
-    ga_list_custom_metrics,
-    ga_list_filters,
-    ga_list_goals,
-    ga_list_remarketing_audiences,
-    ga_list_segments,
-    ga_list_views,
-    ga_list_webproperties,
-)
-from analytics.google_tag_manager import (
-    gtm_list_accounts,
-    gtm_list_containers,
-    gtm_list_environments,
-    gtm_list_permissions,
-    gtm_list_tags,
-    gtm_list_triggers,
-    gtm_list_variables,
-    gtm_list_workspaces,
-)
-
+from analytics.authorization import Service
+from analytics.google_tag_manager import GTMUser
+from analytics.google_analytics import GAUser
 
 gcp_client = "gcp-client.json"
 
+accountpath = "accounts/4703034098"
+containerpath = "accounts/4703034098/containers/13195950"
+workspacepath = "accounts/4703034098/containers/13195265/workspaces/5"
+
+accountid = "3100168"
+propertyid = "UA-3100168-49"
+viewid = "169728486"
+
 
 def test_authorization():
-    gtm_service = get_service("tagmanager", "v2", gcp_client)
-    ga_service = get_service("analytics", "v3", gcp_client)
-    assert isinstance(gtm_service, googleapiclient.discovery.Resource)
-    assert isinstance(ga_service, googleapiclient.discovery.Resource)
+    service = Service("tagmanager", "v2", gcp_client).authenticate()
+    assert isinstance(service, googleapiclient.discovery.Resource)
 
 
 def test_google_tag_manager():
+    service = Service("tagmanager", "v2", gcp_client).authenticate()
+    user = GTMUser(service)
 
-    gtm_service = get_service("tagmanager", "v2", gcp_client)
-    assert isinstance(gtm_service, googleapiclient.discovery.Resource)
+    accounts = user.accounts()
+    assert isinstance(accounts, dict)
 
-    accounts = gtm_list_accounts(gtm_service)
-    assert isinstance(accounts, pd.DataFrame)
+    permissions = user.permissions(accountpath)
+    assert isinstance(permissions, dict)
 
-    account = accounts.iloc[0, 0]
-    permissions = gtm_list_permissions(gtm_service, account)
-    assert isinstance(permissions, pd.DataFrame)
+    containers = user.containers(accountpath)
+    assert isinstance(containers, dict)
 
-    containers = gtm_list_containers(gtm_service, account)
-    assert isinstance(containers, pd.DataFrame)
+    environments = user.environments(containerpath)
+    assert isinstance(environments, dict)
 
-    container = containers.iloc[0, 0]
-    workspaces = gtm_list_workspaces(gtm_service, container)
-    assert isinstance(workspaces, pd.DataFrame)
+    workspaces = user.workspaces(containerpath)
+    assert isinstance(workspaces, dict)
 
-    environments = gtm_list_environments(gtm_service, container)
-    assert isinstance(environments, pd.DataFrame)
+    tags = user.tags(workspacepath)
+    assert isinstance(tags, dict)
 
-    workspace = workspaces.iloc[0, 0]
-    variables = gtm_list_variables(gtm_service, workspace)
-    assert isinstance(variables, pd.DataFrame)
+    variables = user.variables(workspacepath)
+    assert isinstance(variables, dict)
 
-    tags = gtm_list_tags(gtm_service, workspace)
-    assert isinstance(tags, pd.DataFrame)
-
-    triggers = gtm_list_triggers(gtm_service, workspace)
-    assert isinstance(triggers, pd.DataFrame)
+    triggers = user.triggers(workspacepath)
+    assert isinstance(triggers, dict)
 
 
 def test_google_analytics():
+    service = Service("analytics", "v3", gcp_client).authenticate()
+    user = GAUser(service)
 
-    ga_service = get_service("analytics", "v3", gcp_client)
+    summaries = user.summaries()
+    assert isinstance(summaries, dict)
 
-    summaries = ga_list_account_summaries(ga_service)
-    assert isinstance(summaries, pd.DataFrame)
+    accounts = user.accounts()
+    assert isinstance(accounts, dict)
 
-    accounts = ga_list_accounts(ga_service)
-    account = accounts.iloc[0, 0]
-    assert isinstance(accounts, pd.DataFrame)
+    users = user.users(accountid)
+    assert isinstance(users, dict)
 
-    properties = ga_list_webproperties(ga_service, account)
-    webprop = properties.iloc[0, 0]
-    assert isinstance(properties, pd.DataFrame)
+    properties = user.properties(accountid)
+    assert isinstance(properties, dict)
 
-    users = ga_list_account_users(ga_service, account)
-    assert isinstance(users, pd.DataFrame)
+    adwords = user.adwords_links(accountid, propertyid)
+    assert isinstance(adwords, dict)
 
-    adwords_links = ga_adwords_links(ga_service, account, webprop)
-    assert isinstance(adwords_links, pd.DataFrame)
+    dimensions = user.custom_dimensions(accountid, propertyid)
+    assert isinstance(dimensions, dict)
 
-    custom_dimensions = ga_list_custom_dimensions(ga_service, account, webprop)
-    assert isinstance(custom_dimensions, pd.DataFrame)
+    metrics = user.custom_metrics(accountid, propertyid)
+    assert isinstance(metrics, dict)
 
-    custom_metrics = ga_list_custom_metrics(ga_service, account, webprop)
-    assert isinstance(custom_metrics, pd.DataFrame)
+    filters = user.filters(accountid)
+    assert isinstance(filters, dict)
 
-    filters = ga_list_filters(ga_service, account)
-    assert isinstance(filters, pd.DataFrame)
+    views = user.views(accountid, propertyid)
+    assert isinstance(views, dict)
 
-    views = ga_list_views(ga_service, account, webprop)
-    view = views.iloc[0, 0]
-    assert isinstance(views, pd.DataFrame)
+    goals = user.goals(accountid, propertyid, viewid)
+    assert isinstance(goals, dict)
 
-    goals = ga_list_goals(ga_service, account, webprop, view)
-    assert isinstance(goals, pd.DataFrame)
+    remarketing = user.remarketing(accountid, propertyid)
+    assert isinstance(remarketing, dict)
 
-    audiences = ga_list_remarketing_audiences(ga_service, account, webprop)
-    assert isinstance(audiences, pd.DataFrame)
+    segments = user.segments()
+    assert isinstance(segments, dict)
 
-    segments = ga_list_segments(ga_service)
-    assert isinstance(segments, pd.DataFrame)

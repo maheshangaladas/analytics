@@ -125,19 +125,18 @@ dmypy.json
 
 # Miscellaneous
 .vscode/
-sandbox.py
-sandbox2.py
-tagmanager_token.dat
 google_search_console.py 
 pagespeed.py 
 mypy.ini 
 typecheck.sh
-build.sh
 gcp-client.json
-encrypted/
 .DS_Store
 auth.tar
-analytics_token.dat
-analyticsreporting_token.dat
-tags.pickle
+*.pkl 
+*.pickle
 *.csv
+gtm.py
+ga.py 
+*.dat
+utils.py
+documentation.md

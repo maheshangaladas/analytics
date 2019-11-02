@@ -19,7 +19,9 @@ It currently supports:
 - Google Tag Manager
 - Google Analytics (Management API)
 
-At the moment, the library doesn't provide access to every functionality for the respective services. It focuses on the most common ones. The reason for developing this library is that many earlier solutions on GitHub for tools like Google Analytics, Google Tag Manager, and more have not been updated in years. Some are not maintained anymore, or simply don't work.
+At the moment, the library doesn't provide access to every functionality for the respective services. It focuses on the most common ones.
+
+The reason for developing this library is that many earlier solutions on GitHub for tools like Google Analytics, Google Tag Manager, and more have not been updated in years. Some are not maintained anymore, or simply don't work.
 
 **analytics** can help you monitor, inspect, and automate some of your web analytics and SEO work..
 
