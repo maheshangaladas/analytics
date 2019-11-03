@@ -1,6 +1,6 @@
 """
 analytics.google_analytics
-.......................
+..........................
 
 functions to query the google analytics API
 

@@ -1,6 +1,6 @@
 """
-analytics.auth
-...........
+analytics.authorization
+.......................
 
 authorization logic for google APIs.
 
@@ -10,14 +10,15 @@ ref. https://developers.google.com/identity/protocols/googlescopes (API scopes)
 ref. https://developers.google.com/tag-manager/api/v1/devguide (client authorization)
 """
 
-import httplib2
+from dataclasses import dataclass
+
 import googleapiclient
+import httplib2
 from googleapiclient.discovery import build
 from oauth2client import client, file, tools
 from oauth2client.service_account import ServiceAccountCredentials
 
 from analytics.scopes import *
-from dataclasses import dataclass
 
 
 @dataclass
@@ -34,7 +35,7 @@ class Service(object):
         to login with a different account, delete the token and re-run the browser authentication flow
         the token is saved in your current project's root directory, if you move it, the authorization won't work
 
-        # TO-DO : improve token storage and retrieval to be location agnostic
+        TO-DO : improve token storage and retrieval to be location agnostic
         """
 
         if self.api_name == "tagmanager":

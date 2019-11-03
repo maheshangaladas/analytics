@@ -1,6 +1,6 @@
 """
 analytics.scopes
-.............
+................
 
 google API scopes
 """
