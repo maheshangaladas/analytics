@@ -1,6 +1,6 @@
 """
 tests
-..............
+.....
 
 testing analytics functions
 """

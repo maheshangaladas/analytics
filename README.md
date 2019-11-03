@@ -7,7 +7,7 @@
 <a href="https://github.com/xslates/analytics/issues"><img src="https://img.shields.io/github/issues-raw/xslates/analytics.svg">
 <a href="https://github.com/xslates/analytics/releases"><img src="https://img.shields.io/github/release/xslates/analytics.svg"></a>
 <img src="https://travis-ci.org/xslates/analytics.svg?branch=master">
-<a href='https://coveralls.io/github/xslates/analytics?branch=analytics-dev'><img src='https://coveralls.io/repos/github/xslates/analytics/badge.svg?branch=analytics-dev' alt='Coverage Status' /></a>
+<a href='https://coveralls.io/github/xslates/analytics?branch=analytics-dev'><img src='https://coveralls.io/repos/github/xslates/analytics/badge.svg?branch=master&kill_cache=1' alt='Coverage Status' /></a>
 </p>
 
 <img src="https://static.thenounproject.com/png/511316-200.png" alt="signal" align="right" height="260px">

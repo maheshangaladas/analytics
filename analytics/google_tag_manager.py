@@ -1,6 +1,6 @@
 """
 analytics.google_tag_manager
-.........................
+............................
 
 query the google tag manager API
 
