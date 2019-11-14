@@ -1,7 +1,7 @@
 # Change Log
 
-## [v0.1.0](https://github.com/xslates/analytics/tree/v0.1.0) (2019-11-14)
-[Full Changelog](https://github.com/xslates/analytics/compare/0.1.0...v0.1.0)
+## [v0.1.1](https://github.com/xslates/analytics/tree/v0.1.1) (2019-11-14)
+[Full Changelog](https://github.com/xslates/analytics/compare/0.1.0...v0.1.1)
 
 **Implemented enhancements:**
 
