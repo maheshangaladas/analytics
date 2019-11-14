@@ -1,7 +1,7 @@
 # Change Log
 
-## [v0.1.1](https://github.com/xslates/analytics/tree/v0.1.1) (2019-11-14)
-[Full Changelog](https://github.com/xslates/analytics/compare/0.1.0...v0.1.1)
+## [0.1.1](https://github.com/xslates/analytics/tree/0.1.1) (2019-11-14)
+[Full Changelog](https://github.com/xslates/analytics/compare/0.1.0...0.1.1)
 
 **Implemented enhancements:**
 
@@ -10,6 +10,7 @@
 
 **Merged pull requests:**
 
+- Analytics dev [\#28](https://github.com/xslates/analytics/pull/28) ([xslates](https://github.com/xslates))
 - updated coveralls badge [\#26](https://github.com/xslates/analytics/pull/26) ([xslates](https://github.com/xslates))
 
 ## [0.1.0](https://github.com/xslates/analytics/tree/0.1.0) (2019-11-02)
