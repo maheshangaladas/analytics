@@ -12,7 +12,7 @@ ref. https://developers.google.com/tag-manager/api/v1/devguide (client authoriza
 
 from dataclasses import dataclass
 
-import googleapiclient
+from googleapiclient.discovery import Resource
 import httplib2
 from googleapiclient.discovery import build
 from oauth2client import client, file, tools
@@ -28,7 +28,7 @@ class Service(object):
     gcp_file: str
     method: str = "client_secret"
 
-    def authenticate(self: object) -> googleapiclient.discovery.Resource:
+    def authenticate(self: Resource) -> Resource:
         """
         obtain a googleapiclient.discovery.Resource object to access google's apis:
         if using service account, give permissions to your service account email in you apps
