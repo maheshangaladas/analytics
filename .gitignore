@@ -140,3 +140,5 @@ ga.py
 *.dat
 utils.py
 documentation.md
+parser.py
+*.json

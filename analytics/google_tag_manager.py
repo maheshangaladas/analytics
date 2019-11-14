@@ -2,7 +2,7 @@
 analytics.google_tag_manager
 ............................
 
-query the google tag manager API
+query the google tag manager API.
 
 ref. https://developers.google.com/tag-manager/api/v2/devguide
 """
@@ -10,16 +10,20 @@ ref. https://developers.google.com/tag-manager/api/v2/devguide
 from dataclasses import dataclass
 from typing import Dict
 
+from googleapiclient.discovery import Resource
+
 
 @dataclass
 class GTMUser(object):
     service: object
 
-    def accounts(self: object) -> Dict:
+    def accounts(self: Resource) -> Dict:
+        """retrieve accounts for a user"""
         accounts = self.service.accounts().list().execute()
         return accounts
 
-    def permissions(self: object, account_path: str) -> Dict:
+    def permissions(self: Resource, account_path: str) -> Dict:
+        """retrieve user permissions for an account"""
         permissions = (
             self.service.accounts()
             .user_permissions()
@@ -28,7 +32,8 @@ class GTMUser(object):
         )
         return permissions
 
-    def containers(self: object, account_path: str) -> Dict:
+    def containers(self: Resource, account_path: str) -> Dict:
+        """retrieve containers for an account"""
         containers = (
             self.service.accounts()
             .containers()
@@ -37,7 +42,8 @@ class GTMUser(object):
         )
         return containers
 
-    def workspaces(self: object, container_path: str) -> Dict:
+    def workspaces(self: Resource, container_path: str) -> Dict:
+        """retrieve workspaces for a container"""
         workspaces = (
             self.service.accounts()
             .containers()
@@ -47,7 +53,8 @@ class GTMUser(object):
         )
         return workspaces
 
-    def environments(self: object, container_path: str) -> Dict:
+    def environments(self: Resource, container_path: str) -> Dict:
+        """retrieve environments for a container"""
         environments = (
             self.service.accounts()
             .containers()
@@ -57,7 +64,8 @@ class GTMUser(object):
         )
         return environments
 
-    def tags(self: object, workspace_path: str) -> Dict:
+    def tags(self: Resource, workspace_path: str) -> Dict:
+        """retrieve tags for a workspace"""
         tags = (
             self.service.accounts()
             .containers()
@@ -68,7 +76,8 @@ class GTMUser(object):
         )
         return tags
 
-    def variables(self: object, workspace_path: str) -> Dict:
+    def variables(self: Resource, workspace_path: str) -> Dict:
+        """retrieve variables for a workspace"""
         variables = (
             self.service.accounts()
             .containers()
@@ -79,7 +88,8 @@ class GTMUser(object):
         )
         return variables
 
-    def triggers(self: object, workspace_path: str) -> Dict:
+    def triggers(self: Resource, workspace_path: str) -> Dict:
+        """retrieve triggers for a workspace"""
         triggers = (
             self.service.accounts()
             .containers()

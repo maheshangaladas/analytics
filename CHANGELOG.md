@@ -1,5 +1,17 @@
 # Change Log
 
+## [v0.1.1](https://github.com/xslates/analytics/tree/v0.1.1) (2019-11-14)
+[Full Changelog](https://github.com/xslates/analytics/compare/0.1.0...v0.1.1)
+
+**Implemented enhancements:**
+
+- Optional data frame from JSON response [\#27](https://github.com/xslates/analytics/issues/27)
+- Nested JSON [\#24](https://github.com/xslates/analytics/issues/24)
+
+**Merged pull requests:**
+
+- updated coveralls badge [\#26](https://github.com/xslates/analytics/pull/26) ([xslates](https://github.com/xslates))
+
 ## [0.1.0](https://github.com/xslates/analytics/tree/0.1.0) (2019-11-02)
 [Full Changelog](https://github.com/xslates/analytics/compare/0.0.3...0.1.0)
 
