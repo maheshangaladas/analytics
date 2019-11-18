@@ -10,8 +10,6 @@
 <a href='https://coveralls.io/github/xslates/analytics?branch=analytics-dev'><img src='https://coveralls.io/repos/github/xslates/analytics/badge.svg?branch=master&kill_cache=1' alt='Coverage Status' /></a>
 </p>
 
-<img src="https://res.cloudinary.com/teepublic/image/private/s--IM29G_jX--/t_Preview/b_rgb:ffffff,c_limit,f_jpg,h_630,q_90,w_630/v1543086917/production/designs/3569385_1.jpg" alt="signal" align="right" height="260px">
-
 **analytics** helps you work with (some) popular web analytics services via API.
 
 It currently supports:

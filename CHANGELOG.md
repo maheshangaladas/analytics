@@ -5,6 +5,7 @@
 
 **Merged pull requests:**
 
+- updated documentation [\#30](https://github.com/xslates/analytics/pull/30) ([xslates](https://github.com/xslates))
 - updated README and DETAILS [\#29](https://github.com/xslates/analytics/pull/29) ([xslates](https://github.com/xslates))
 
 ## [0.1.1](https://github.com/xslates/analytics/tree/0.1.1) (2019-11-14)
