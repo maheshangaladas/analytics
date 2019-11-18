@@ -26,8 +26,8 @@ from analytics.authorization import *
 You can authorize using service accounts or client tokens. Given that you've downloaded either, you can authenticate like this:
 
 ```python
-gcp_service = "/Users/username/gcp-service.json"
-gcp_client = "/Users/username/gcp-client.json"
+gcp_service = "/path/to/gcp-service.json"
+gcp_client = "/path/to/gcp-client.json"
 
 # Google Tag Manager
 service = Service("tagmanager", "v2", gcp_client).authenticate() # or gcp_service
@@ -35,7 +35,7 @@ user = GTMUser(service)
 
 # Google Analytics
 service = Service("analytics", "v3", gcp_client).authenticate() # or gcp_service
-user = GAUser(service
+user = GAUser(service)
 ```
 
 If you use service accounts, remember to give permissions to your service account email on the platforms you want to access.
