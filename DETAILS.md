@@ -4,7 +4,6 @@
 - [Authorization](#authorization)
 - [Google Tag Manager](#google-tag-manager)
 - [Google Analytics (Management)](#google-analytics-management)
-- [Google Analytics Reporting](#google-analytics-reporting)
 - [JSON vs Pandas for Google Tag Manager and Google Analytics Management](#json-vs-pandas-for-google-tag-manager-and-google-analytics-management)
 
 ## Installation
@@ -128,10 +127,6 @@ print(remarketing)
 segments = user.segments()
 print(segments)
 ```
-
-## Google Analytics Reporting
-
-( ... WIP)
 
 ## JSON vs Pandas for Google Tag Manager and Google Analytics Management
 
