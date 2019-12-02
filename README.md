@@ -1,4 +1,4 @@
-# <p align="center">🌶</p>
+<H1 align="center">🌶</H1>
 
 <p align="center">Web analytics tooling.</p>
 
