@@ -1,4 +1,5 @@
-<h3 align="center"><img src="https://res.cloudinary.com/teepublic/image/private/s--IM29G_jX--/t_Preview/b_rgb:ffffff,c_limit,f_jpg,h_630,q_90,w_630/v1543086917/production/designs/3569385_1.jpg" alt="project name" height="100px"></h3>
+# <p align="center">🌶</p>
+
 <p align="center">Web analytics tooling.</p>
 
 <p align="center">
@@ -17,9 +18,7 @@ It currently supports:
 - Google Tag Manager
 - Google Analytics (Management API)
 
-At the moment, the library only provides a subset of the functionalities of the respective APIs.
-
-The reason for developing this library is that many earlier solutions on GitHub for these tools have not been updated in years. Some are not maintained anymore, or simply don't work.
+At the moment, the library only provides a subset of the functionalities of the respective APIs. The reason for developing this library is that many earlier solutions on GitHub for these tools have not been updated in years. Some are not maintained anymore, or simply don't work.
 
 **analytics** can help you monitor, inspect, and automate some of your web analytics and SEO work.
 
