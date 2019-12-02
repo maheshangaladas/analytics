@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- updated readme [\#33](https://github.com/xslates/analytics/pull/33) ([xslates](https://github.com/xslates))
 - updated readme [\#32](https://github.com/xslates/analytics/pull/32) ([xslates](https://github.com/xslates))
 - Analytics dev [\#31](https://github.com/xslates/analytics/pull/31) ([xslates](https://github.com/xslates))
 - updated documentation [\#30](https://github.com/xslates/analytics/pull/30) ([xslates](https://github.com/xslates))
