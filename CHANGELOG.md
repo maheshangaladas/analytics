@@ -1,12 +1,16 @@
 # Changelog
 
-## [v0.1.1](https://github.com/xslates/analytics/tree/v0.1.1) (2019-12-30)
+## [v0.1.2](https://github.com/xslates/analytics/tree/v0.1.2) (2019-12-30)
 
-[Full Changelog](https://github.com/xslates/analytics/compare/0.1.2...v0.1.1)
+[Full Changelog](https://github.com/xslates/analytics/compare/0.1.2...v0.1.2)
 
 **Implemented enhancements:**
 
 - UTM Tags [\#39](https://github.com/xslates/analytics/issues/39)
+
+**Merged pull requests:**
+
+- utm tags implementation complete ✨ [\#45](https://github.com/xslates/analytics/pull/45) ([xslates](https://github.com/xslates))
 
 ## [0.1.2](https://github.com/xslates/analytics/tree/0.1.2) (2019-12-30)
 
