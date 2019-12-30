@@ -1,11 +1,12 @@
 # Changelog
 
-## [v0.1.1](https://github.com/xslates/analytics/tree/v0.1.1) (2019-12-02)
+## [v0.1.1](https://github.com/xslates/analytics/tree/v0.1.1) (2019-12-30)
 
 [Full Changelog](https://github.com/xslates/analytics/compare/0.1.1...v0.1.1)
 
 **Merged pull requests:**
 
+- updated readme [\#37](https://github.com/xslates/analytics/pull/37) ([xslates](https://github.com/xslates))
 - updated readme [\#33](https://github.com/xslates/analytics/pull/33) ([xslates](https://github.com/xslates))
 - updated readme [\#32](https://github.com/xslates/analytics/pull/32) ([xslates](https://github.com/xslates))
 - Analytics dev [\#31](https://github.com/xslates/analytics/pull/31) ([xslates](https://github.com/xslates))
