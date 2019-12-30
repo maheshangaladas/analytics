@@ -20,12 +20,13 @@ def utm_tag(
     content: Optional[str] = None,
 ) -> str:
 
+    term = re.sub(r" ", "%2B", term) if term else None
+    content = re.sub(r" ", "%2B", content) if content else None
+
     website_url = url + "?" if url.endswith("/") else url + "/?"
     campaign_source = "utm_source=" + source
     campaign_medium = "utm_medium=" + medium
     campaign_name = "utm_campaign=" + name
-    # the utm builder handles concatenation of terms differently (look into it)
-    # terms can be compounded, have plus signs, empty spaces, etc. between them
     campaign_term = "utm_term=" + term if term else ""
     campaign_content = "utm_content=" + content if content else ""
 
