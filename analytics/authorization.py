@@ -12,13 +12,16 @@ ref. https://developers.google.com/tag-manager/api/v1/devguide (client authoriza
 
 from dataclasses import dataclass
 
-from googleapiclient.discovery import Resource
 import httplib2
-from googleapiclient.discovery import build
+from googleapiclient.discovery import Resource, build
 from oauth2client import client, file, tools
 from oauth2client.service_account import ServiceAccountCredentials
 
-from analytics.scopes import *
+from analytics.scopes import (
+    GOOGLE_ANALYTICS_SCOPES,
+    GOOGLE_TAG_MANAGER_SCOPES,
+    SEARCH_CONSOLE_SCOPES,
+)
 
 
 @dataclass
