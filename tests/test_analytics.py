@@ -10,6 +10,7 @@ import googleapiclient
 from analytics.authorization import Service
 from analytics.google_analytics import GAUser
 from analytics.google_tag_manager import GTMUser
+from analytics.seo import URL
 from analytics.utm_tags import utm_tag
 
 gcp_client = "gcp-client.json"
@@ -125,3 +126,10 @@ def test_utm_tags():
 
     assert google_tag == correct_google_utm
     assert email_tag == correct_email_utm
+
+
+def test_seo():
+    testurl = "https://www.hemnet.se/"
+    url = URL(testurl)
+    url.inspect()
+    assert url.attributes is not None
