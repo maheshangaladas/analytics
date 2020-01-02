@@ -1,15 +1,17 @@
 # Changelog
 
-## [v0.1.2](https://github.com/xslates/analytics/tree/v0.1.2) (2020-01-01)
+## [v0.1.3](https://github.com/xslates/analytics/tree/v0.1.3) (2020-01-02)
 
-[Full Changelog](https://github.com/xslates/analytics/compare/0.1.2...v0.1.2)
+[Full Changelog](https://github.com/xslates/analytics/compare/0.1.2...v0.1.3)
 
 **Implemented enhancements:**
 
+- SEO features [\#42](https://github.com/xslates/analytics/issues/42)
 - UTM Tags [\#39](https://github.com/xslates/analytics/issues/39)
 
 **Merged pull requests:**
 
+- started implementing seo tools [\#48](https://github.com/xslates/analytics/pull/48) ([xslates](https://github.com/xslates))
 - new release 🍰 [\#46](https://github.com/xslates/analytics/pull/46) ([xslates](https://github.com/xslates))
 - utm tags implementation complete ✨ [\#45](https://github.com/xslates/analytics/pull/45) ([xslates](https://github.com/xslates))
 

@@ -5,6 +5,7 @@ tests
 testing analytics functions
 """
 
+
 import googleapiclient
 
 from analytics.authorization import Service
@@ -22,6 +23,15 @@ workspacepath = "accounts/4703034098/containers/13195265/workspaces/5"
 accountid = "3100168"
 propertyid = "UA-3100168-49"
 viewid = "169728486"
+
+
+def test_seo():
+    testurl = "https://www.hemnet.se"
+    url = URL(testurl)
+    url.inspect()
+    assert isinstance(url, URL)
+    assert url.attributes is not None
+    assert url.attributes["status_code"] == 200
 
 
 def test_authorization():
@@ -126,10 +136,3 @@ def test_utm_tags():
 
     assert google_tag == correct_google_utm
     assert email_tag == correct_email_utm
-
-
-def test_seo():
-    testurl = "https://www.hemnet.se/"
-    url = URL(testurl)
-    url.inspect()
-    assert url.attributes is not None
