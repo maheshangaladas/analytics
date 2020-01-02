@@ -13,19 +13,21 @@ from requests_html import HTMLSession
 
 @dataclass
 class URL:
-    name: str = None
-    attributes: OrderedDict() = None
+    name: str
 
     def inspect(self):
         """extract seo information from a URL"""
         session = HTMLSession()
         if self.name:
             response = session.get(self.name)
+            response.html.render()
             status_code = response.status_code
             history = response.history
             encoding = response.encoding
             title = response.html.find("title", first=True).text
-            # absolute_links(response.html.absolute_links)
+            links = response.html.absolute_links
+            html = response.html
+            raw_html = response.html.raw_html
             self.attributes = OrderedDict(
                 [
                     ("response", response),
@@ -33,6 +35,9 @@ class URL:
                     ("history", history),
                     ("encoding", encoding),
                     ("title", title),
+                    ("links", links),
+                    ("html", html),
+                    ("raw_html", raw_html),
                 ]
             )
         else:
@@ -40,14 +45,3 @@ class URL:
                 "please instantiate the URL class with a url name, e.g. URL('https://domainname.com')"
             )
         return self.attributes
-
-
-if __name__ == "__main__":
-    # work in progress
-
-    # url = URL("https://www.python.org/")
-    # url = URL("https://www.avanza.se/start")
-    url = URL("https://www.hemnet.se/")
-    url.inspect()
-    print(url.name)
-    print(url.attributes)
