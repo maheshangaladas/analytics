@@ -15,7 +15,7 @@ from requests_html import HTMLSession
 class URL:
     name: str
 
-    def inspect(self):
+    def inspect(self) -> OrderedDict:
         """extract seo information from a URL"""
         session = HTMLSession()
         if self.name:
