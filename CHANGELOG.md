@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.1.3](https://github.com/xslates/analytics/tree/v0.1.3) (2020-01-14)
+
+[Full Changelog](https://github.com/xslates/analytics/compare/v.0.1.3...v0.1.3)
+
+**Merged pull requests:**
+
+- type hint for inspect function [\#50](https://github.com/xslates/analytics/pull/50) ([xslates](https://github.com/xslates))
+
 ## [v.0.1.3](https://github.com/xslates/analytics/tree/v.0.1.3) (2020-01-02)
 
 [Full Changelog](https://github.com/xslates/analytics/compare/0.1.2...v.0.1.3)
