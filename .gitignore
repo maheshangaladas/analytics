@@ -125,8 +125,6 @@ dmypy.json
 
 # Miscellaneous
 .vscode/
-google_search_console.py 
-pagespeed.py 
 mypy.ini 
 typecheck.sh
 gcp-client.json
@@ -135,10 +133,6 @@ auth.tar
 *.pkl 
 *.pickle
 *.csv
-gtm.py
-ga.py 
 *.dat
 utils.py
-documentation.md
-parser.py
 *.json

@@ -1,6 +1,6 @@
 # Resources
 
-*Interesting sources for (pontentially) useful techniques for website analytics.*
+*Interesting sources for (potentially) useful techniques for website analytics.*
 
 ## Links
 

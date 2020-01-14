@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- resources ideas [\#51](https://github.com/xslates/analytics/pull/51) ([xslates](https://github.com/xslates))
 - type hint for inspect function [\#50](https://github.com/xslates/analytics/pull/50) ([xslates](https://github.com/xslates))
 
 ## [v.0.1.3](https://github.com/xslates/analytics/tree/v.0.1.3) (2020-01-02)
