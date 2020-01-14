@@ -7,7 +7,7 @@ lists of useful website metrics
 
 from typing import List
 
-performance = [
+performance_metrics = [
     "page speed",
     "time to interactive",
     "page load time",
@@ -26,7 +26,7 @@ performance = [
 ]
 
 
-def metrics_inspiration(kind: List[str]) -> List:
+def metrics_list(kind: List[str]) -> List:
     """list web metrics"""
     metrics = kind
     return metrics

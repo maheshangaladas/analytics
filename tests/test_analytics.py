@@ -11,6 +11,7 @@ import googleapiclient
 from analytics.authorization import Service
 from analytics.google_analytics import GAUser
 from analytics.google_tag_manager import GTMUser
+from analytics.metrics import metrics_list, performance_metrics
 from analytics.seo import URL
 from analytics.utm_tags import utm_tag
 
@@ -136,3 +137,8 @@ def test_utm_tags():
 
     assert google_tag == correct_google_utm
     assert email_tag == correct_email_utm
+
+
+def test_metrics_list():
+    metrics = metrics_list(performance_metrics)
+    assert isinstance(metrics, list)
