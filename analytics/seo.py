@@ -3,6 +3,9 @@ analytics.seo
 .............
 
 seo tools for analytics
+
+(some interesting stuff for the future maybe ?)
+>> https://www.searchenginewatch.com/2019/03/13/using-python-recover-site-traffic-part-two/
 """
 
 from collections import OrderedDict
