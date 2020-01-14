@@ -11,15 +11,6 @@
 <a href='https://coveralls.io/github/xslates/analytics?branch=analytics-dev'><img src='https://coveralls.io/repos/github/xslates/analytics/badge.svg?branch=master&kill_cache=1' alt='Coverage Status' /></a>
 </p>
 
-**analytics** helps you work with (some) popular web analytics services via API.
+*this is still a heavy work in progress; not sure where to take this yet*
 
-It currently supports:
-
-- Google Tag Manager
-- Google Analytics (Management API)
-
-At the moment, the library only provides a subset of the functionalities of the respective APIs. The reason for developing this library is that many earlier solutions on GitHub for these tools have not been updated in years. Some are not maintained anymore, or simply don't work.
-
-**analytics** can help you monitor, inspect, and automate some of your web analytics and SEO work.
-
-### More [[Details](https://github.com/xslates/analytics/blob/master/DETAILS.md)]
+![](https://media0.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif)

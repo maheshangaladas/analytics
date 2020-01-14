@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- some random new stuff; unsure about use 🤷🏽‍♂️ [\#52](https://github.com/xslates/analytics/pull/52) ([xslates](https://github.com/xslates))
 - resources ideas [\#51](https://github.com/xslates/analytics/pull/51) ([xslates](https://github.com/xslates))
 - type hint for inspect function [\#50](https://github.com/xslates/analytics/pull/50) ([xslates](https://github.com/xslates))
 
