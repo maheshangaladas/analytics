@@ -4,7 +4,6 @@ analytics.google_analytics
 
 functions to query the google analytics API.
 
-ref. https://www.twilio.com/blog/2018/03/google-analytics-slack-bot-python.html
 ref. https://developers.google.com/analytics/devguides/reporting/core/v4/basics
 ref. https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference
 ref. https://stackoverflow.com/questions/43477702/google-analytics-api-into-csv
