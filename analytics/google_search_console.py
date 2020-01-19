@@ -3,8 +3,6 @@ analytics.search_console
 ........................
 
 query the google search console API
-
-ref. https://trevorfox.com/2018/03/google-search-console-api-python-tutorial/
 """
 
 

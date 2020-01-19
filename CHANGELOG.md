@@ -1,15 +1,19 @@
 # Changelog
 
-## [v0.1.3](https://github.com/xslates/analytics/tree/v0.1.3) (2020-01-17)
+## [v0.1.3](https://github.com/xslates/analytics/tree/v0.1.3) (2020-01-19)
 
 [Full Changelog](https://github.com/xslates/analytics/compare/v.0.1.3...v0.1.3)
 
 **Implemented enhancements:**
 
+- Experiments module [\#43](https://github.com/xslates/analytics/issues/43)
+- Cost-Benefit Analysis [\#41](https://github.com/xslates/analytics/issues/41)
+- Skyline computations [\#36](https://github.com/xslates/analytics/issues/36)
 - SEO tools [\#35](https://github.com/xslates/analytics/issues/35)
 
 **Merged pull requests:**
 
+- updating more mess [\#54](https://github.com/xslates/analytics/pull/54) ([xslates](https://github.com/xslates))
 - updated the mess [\#53](https://github.com/xslates/analytics/pull/53) ([xslates](https://github.com/xslates))
 - some random new stuff; unsure about use 🤷🏽‍♂️ [\#52](https://github.com/xslates/analytics/pull/52) ([xslates](https://github.com/xslates))
 - resources ideas [\#51](https://github.com/xslates/analytics/pull/51) ([xslates](https://github.com/xslates))
