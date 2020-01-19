@@ -7,7 +7,6 @@ testing analytics functions
 
 
 import googleapiclient
-
 from analytics.authorization import Service
 from analytics.google_analytics import GAUser
 from analytics.google_tag_manager import GTMUser

@@ -12,9 +12,9 @@ for f in $(find ./{analytics,tests} -type f -name "*.py" -print); do
 	fi
 done
 
-pytest
-
 source env/bin/activate
+
+pytest
 pip freeze > requirements.txt
 deactivate
 

@@ -1,17 +1,8 @@
 """
-analytics.seo
-.............
+analytics.page_insights
+.......................
 
 seo tools for analytics
-
-(some interesting stuff for the future maybe ?)
->> https://www.searchenginewatch.com/2019/03/13/using-python-recover-site-traffic-part-two/
-
-# https://developers.google.com/speed/docs/insights/v5/reference/pagespeedapi/runpagespeed
-# https://developers.google.com/speed/docs/insights/v5/about
-# https://www.youtube.com/watch?v=vPfz2VwIryk
-# https://www.youtube.com/watch?v=ZplV8VAv8zQ
-# https://moz.com/blog/how-to-automate-pagespeed-insights-for-multiple-urls-using-google-sheets
 """
 
 from collections import OrderedDict
