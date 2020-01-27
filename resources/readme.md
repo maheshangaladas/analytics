@@ -49,3 +49,11 @@
 - https://machinelearningmastery.com/effect-size-measures-in-python/
 - https://stackoverflow.com/questions/21532471/how-to-calculate-cohens-d-in-python
 - https://dfrieds.com/math/effect-size
+
+### SEO
+
+- https://www.searchenginejournal.com/python-seo-data-reference-guide/287927/#close
+- https://github.com/sethblack/python-seo-analyzer
+- https://www.searchenginewatch.com/2019/03/13/using-python-recover-site-traffic-part-two/
+- https://www.searchenginewatch.com/2019/02/12/using-python-recover-site-traffic-part-one/
+
