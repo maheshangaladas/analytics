@@ -1,8 +1,6 @@
 """
-analytics.scopes
-................
-
 google API scopes
+
 """
 
 GOOGLE_TAG_MANAGER_SCOPES = [

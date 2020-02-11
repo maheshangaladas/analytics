@@ -1,8 +1,5 @@
 """
-analytics.google_tag_manager
-............................
-
-query the google tag manager API.
+query the google tag manager API
 
 ref. https://developers.google.com/tag-manager/api/v2/devguide
 """

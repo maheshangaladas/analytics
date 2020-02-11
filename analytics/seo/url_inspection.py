@@ -1,8 +1,6 @@
 """
-analytics.page_insights
-.......................
+inspect url information
 
-seo tools for analytics
 """
 
 from collections import OrderedDict
