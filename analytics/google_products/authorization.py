@@ -1,8 +1,5 @@
 """
-analytics.authorization
-.......................
-
-authorization logic for google APIs.
+authorization logic for google APIs
 
 ref. https://developers.google.com/apis-explorer/#p/ (services)
 ref. https://developers.google.com/analytics/devguides/config/mgmt/v3/quickstart/service-py (service account authorization)

@@ -1,7 +1,4 @@
 """
-analytics.utm_tags
-..................
-
 generate UTM tags
 
 ref. https://ga-dev-tools.appspot.com/campaign-url-builder/

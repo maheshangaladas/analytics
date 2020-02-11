@@ -1,8 +1,6 @@
 """
-analytics.search_console
-........................
-
 query the google search console API
+
 """
 
 

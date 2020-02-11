@@ -1,8 +1,5 @@
 """
-analytics.google_analytics
-..........................
-
-functions to query the google analytics API.
+query the google analytics API
 
 ref. https://developers.google.com/analytics/devguides/reporting/core/v4/basics
 ref. https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference
