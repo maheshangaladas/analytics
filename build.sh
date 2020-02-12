@@ -18,7 +18,7 @@ pytest
 pip freeze > requirements.txt
 deactivate
 
-github_changelog_generator
+# github_changelog_generator
 
 git status
 git add .
