@@ -1,6 +1,5 @@
 from collections import OrderedDict
-
-# from pprint import pprint
+from pprint import pprint
 from typing import Dict, List
 
 import googleapiclient
@@ -78,27 +77,35 @@ def ga_permissions_audit(
     return overview
 
 
-def ga_properties_audit():
-    pass
+def ga_properties_audit(user: googleapiclient.discovery.Resource):
+    summaries = user.summaries()["items"]
+    # we need to create a dictionary of account_id, property_id
+    # we then can decompose it in the call to funcs like custom_metrics
+    return summaries
 
 
-def ga_profiles_audit():
-    pass
+def ga_profiles_audit(user: googleapiclient.discovery.Resource):
+    summaries = user.summaries()["items"]
+    # we need a dict of account_id, property_id, view_id
+    # we then decompose it to make call to funcs like goals
+    return summaries
 
 
-# if __name__ == "__main__":
-#    nvv_accounts = [
-#        "19884770",
-#        "154504229",
-#        "43705232",
-#        "29376776",
-#        "151911907",
-#        "51135343",
-#    ]
-#
-#    gcp_client = "gcp-client.json"
-#    ga_user = ga_auth(gcp_client)
-#    accounts = ga_accounts_audit(ga_user, nvv_accounts)
-#    permissions = ga_permissions_audit(ga_user, nvv_accounts)
-#    pprint(accounts)
-#    pprint(permissions)
+if __name__ == "__main__":
+    nvv_accounts = [
+        "19884770",
+        "154504229",
+        "43705232",
+        "29376776",
+        "151911907",
+        "51135343",
+    ]
+
+    gcp_client = "gcp-client.json"
+    ga_user = ga_auth(gcp_client)
+    accounts = ga_accounts_audit(ga_user, nvv_accounts)
+    permissions = ga_permissions_audit(ga_user, nvv_accounts)
+    # pprint(accounts)
+    # pprint(permissions)
+    properties = ga_properties_audit(ga_user)
+    pprint(properties)
