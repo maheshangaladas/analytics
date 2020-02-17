@@ -1,3 +1,6 @@
+# this should become OOP to avoid repetitions and shit like that
+# futhermore, I gotta figure out what I actually want it to return
+
 from pprint import pprint
 
 import googleapiclient
@@ -38,6 +41,12 @@ def properties_collection(user, account_ids):
     return list(zip(ids, names))
 
 
+def properties_representation(user, account_ids):
+    """return the api representation for the properties for selected accounts"""
+    properties = [user.properties(i)["items"] for i in account_ids]
+    return properties
+
+
 def profiles_collection(user, account_ids):
     """return (property name, profile name) for selected accounts"""
     summaries = user.summaries()
@@ -59,6 +68,19 @@ def profiles_collection(user, account_ids):
     ]
 
     return list(zip(properties, names))
+
+
+def profiles_representation(user, account_ids):
+    """return the api representation for the profiles of a selected account"""
+    properties = [user.properties(i)["items"] for i in account_ids]
+
+    representation = [
+        user.views(j["accountId"], j["id"])["items"]
+        for i in properties
+        for j in i
+    ]
+
+    return representation
 
 
 def permissions_collection(user, account_ids):
@@ -170,3 +192,5 @@ if __name__ == "__main__":
     pprint(custdims_collection(ga_user, nvv_accounts))
     pprint(custmets_collection(ga_user, nvv_accounts))
     pprint(goals_collection(ga_user, nvv_accounts))
+    pprint(profiles_representation(ga_user, nvv_accounts))
+    pprint(properties_representation(ga_user, nvv_accounts))
