@@ -136,3 +136,4 @@ auth.tar
 *.dat
 utils.py
 *.json
+intelligence/
