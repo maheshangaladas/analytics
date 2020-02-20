@@ -1,115 +1,101 @@
-# this should become OOP to avoid repetitions and shit like that
-# futhermore, I gotta figure out what I actually want it to return
+"""
+google tag manager audit (overview of accounts)
+"""
 
+from dataclasses import dataclass, field
+from itertools import chain
 from pprint import pprint
 
-import googleapiclient
+from googleapiclient.discovery import Resource
 
 from analytics.google_products.authorization import Service
 from analytics.google_products.google_tag_manager import GTMUser
 
 
-def gtm_auth(client: str) -> googleapiclient.discovery.Resource:
-    """authorize into the google tag manager API"""
-    service = Service("tagmanager", "v2", client).authenticate()
-    ga_user = GTMUser(service)
-    return ga_user
+@dataclass
+class Audit(object):
+    """given a user and list of accounts, run a bunch of checks"""
 
+    account_ids: list = field(default_factory=list)
+    client: str = field(default_factory=str)
+    gtm_user: Resource = None
+    account_paths: list = field(default_factory=list)
+    container_paths: list = field(default_factory=list)
+    workspace_paths: list = field(default_factory=list)
 
-def accounts_collection(user, account_ids):
-    """return selected accounts"""
-    accounts = user.accounts()["account"]
-    selected_accounts = [d for d in accounts if d["accountId"] in account_ids]
-    return selected_accounts
+    def authenticate(self):
+        service = Service("tagmanager", "v2", self.client).authenticate()
+        self.gtm_user = GTMUser(service)
+        return self
 
+    def path_representation(self):
+        self._account_representation()
+        self._container_representation()
+        self._workspace_representation()
+        return self
 
-def permissions_collection(user, account_ids):
-    """return permissions for selected accounts"""
-    accounts = user.accounts()["account"]
-    selected_accounts = [d for d in accounts if d["accountId"] in account_ids]
-    account_paths = [i["path"] for i in selected_accounts]
-    permissions = [
-        user.permissions(i)["userPermission"] for i in account_paths
-    ]
-    return permissions
+    def _account_representation(self):
+        accounts = self.gtm_user.accounts()["account"]
+        accounts_subset = [
+            d for d in accounts if d["accountId"] in self.account_ids
+        ]
+        self.account_paths = [d["path"] for d in accounts_subset]
+        return accounts_subset
 
+    def _container_representation(self):
+        containers = [
+            self.gtm_user.containers(p)["container"]
+            for p in self.account_paths
+        ]
+        containers = list(chain.from_iterable(containers))
+        self.container_paths = [d["path"] for d in containers]
+        return containers
 
-def containers_collection(user, account_ids):
-    accounts = user.accounts()["account"]
-    selected_accounts = [d for d in accounts if d["accountId"] in account_ids]
-    account_paths = [i["path"] for i in selected_accounts]
-    containers = [user.containers(i)["container"] for i in account_paths]
-    return containers
+    def _workspace_representation(self):
+        workspaces = [
+            self.gtm_user.workspaces(p)["workspace"]
+            for p in self.container_paths
+        ]
+        workspaces = list(chain.from_iterable(workspaces))
+        self.workspace_paths = [d["path"] for d in workspaces]
+        return workspaces
 
+    def permission_representation(self):
+        permissions = [
+            self.gtm_user.permissions(p) for p in self.account_paths
+        ]
+        return permissions
 
-def workspaces_collection(user, account_ids):
-    accounts = user.accounts()["account"]
-    selected_accounts = [d for d in accounts if d["accountId"] in account_ids]
-    account_paths = [i["path"] for i in selected_accounts]
-    containers = [user.containers(i)["container"] for i in account_paths]
-    container_paths = [j["path"] for i in containers for j in i]
-    workspaces = [user.workspaces(i)["workspace"] for i in container_paths]
-    return workspaces
+    def tag_representation(self):
+        tags = [self.gtm_user.tags(p)["tag"] for p in self.workspace_paths]
+        return tags
 
+    def trigger_representation(self):
+        triggers = [self.gtm_user.triggers(p) for p in self.workspace_paths]
+        return triggers
 
-def environments_collection(user, account_ids):
-    accounts = user.accounts()["account"]
-    selected_accounts = [d for d in accounts if d["accountId"] in account_ids]
-    account_paths = [i["path"] for i in selected_accounts]
-    containers = [user.containers(i)["container"] for i in account_paths]
-    container_paths = [j["path"] for i in containers for j in i]
-    environments = [
-        user.environments(i)["environment"] for i in container_paths
-    ]
-    return environments
-
-
-def tags_collection(user, account_ids):
-    accounts = user.accounts()["account"]
-    selected_accounts = [d for d in accounts if d["accountId"] in account_ids]
-    account_paths = [i["path"] for i in selected_accounts]
-    containers = [user.containers(i)["container"] for i in account_paths]
-    container_paths = [j["path"] for i in containers for j in i]
-    workspaces = [user.workspaces(i)["workspace"] for i in container_paths]
-    workspace_paths = [j["path"] for i in workspaces for j in i]
-    tags = [user.tags(i)["tag"] for i in workspace_paths]
-    return tags
-
-
-def triggers_collection(user, account_ids):
-    accounts = user.accounts()["account"]
-    selected_accounts = [d for d in accounts if d["accountId"] in account_ids]
-    account_paths = [i["path"] for i in selected_accounts]
-    containers = [user.containers(i)["container"] for i in account_paths]
-    container_paths = [j["path"] for i in containers for j in i]
-    workspaces = [user.workspaces(i)["workspace"] for i in container_paths]
-    workspace_paths = [j["path"] for i in workspaces for j in i]
-    triggers = [user.triggers(i)["trigger"] for i in workspace_paths]
-    return triggers
-
-
-def variables_collection(user, account_ids):
-    accounts = user.accounts()["account"]
-    selected_accounts = [d for d in accounts if d["accountId"] in account_ids]
-    account_paths = [i["path"] for i in selected_accounts]
-    containers = [user.containers(i)["container"] for i in account_paths]
-    container_paths = [j["path"] for i in containers for j in i]
-    workspaces = [user.workspaces(i)["workspace"] for i in container_paths]
-    workspace_paths = [j["path"] for i in workspaces for j in i]
-    variables = [user.variables(i)["variable"] for i in workspace_paths]
-    return variables
+    def variable_representation(self):
+        variables = [
+            self.gtm_user.variables(p)["variable"]
+            for p in self.workspace_paths
+        ]
+        return variables
 
 
 if __name__ == "__main__":
-    nvv_accounts = ["87114"]
-    gcp_client = "gcp-client.json"
-    gtm_user = gtm_auth(gcp_client)
+    # there's a limit on requests per 100 seconds, who know what this limit is
+    # google sure won't care to tell you
 
-    pprint(accounts_collection(gtm_user, nvv_accounts))
-    pprint(permissions_collection(gtm_user, nvv_accounts))
-    pprint(containers_collection(gtm_user, nvv_accounts))
-    pprint(workspaces_collection(gtm_user, nvv_accounts))
-    pprint(environments_collection(gtm_user, nvv_accounts))
-    pprint(tags_collection(gtm_user, nvv_accounts))
-    pprint(triggers_collection(gtm_user, nvv_accounts))
-    pprint(variables_collection(gtm_user, nvv_accounts))
+    nvv = ["87114"]
+    gcp_client = "gcp-client.json"
+
+    audit = Audit(account_ids=nvv, client=gcp_client).authenticate()
+    print(audit)
+
+    audit.path_representation()
+    pprint(audit.permission_representation())
+    pprint(audit.tag_representation())
+    pprint(audit.trigger_representation())
+    pprint(audit.variable_representation())
+
+    print(audit)
